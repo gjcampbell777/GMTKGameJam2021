@@ -1,0 +1,115 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scenes/Spikes.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Wall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Gate.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/LevelTemplate.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/PlayerWall.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/WallFlag.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scripts/Level.gd" type="Script" id=9]
+
+[node name="Level14" type="Node2D"]
+script = ExtResource( 9 )
+
+[node name="LevelTemplate" parent="." instance=ExtResource( 5 )]
+
+[node name="PlayerWall" parent="." instance=ExtResource( 7 )]
+position = Vector2( 826.462, 784.477 )
+
+[node name="Player" parent="." instance=ExtResource( 6 )]
+position = Vector2( 134.351, 490.464 )
+
+[node name="WallFlag" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1788.83, 421.658 )
+
+[node name="Wall3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 138.813, 606.161 )
+scale = Vector2( 3.56, 0.599999 )
+
+[node name="Wall4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 703.896, 600.605 )
+scale = Vector2( 2.24, 0.599999 )
+
+[node name="Wall7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1642.34, 841.29 )
+scale = Vector2( 2.24, 0.599999 )
+
+[node name="Wall8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 329.555, 217.535 )
+scale = Vector2( 2.24, 0.599999 )
+
+[node name="Wall9" parent="." instance=ExtResource( 3 )]
+position = Vector2( 144.464, 829.801 )
+scale = Vector2( 2.24, 0.599999 )
+
+[node name="Wall5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1614.07, 310.857 )
+scale = Vector2( 9, 0.599999 )
+
+[node name="Wall10" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1614.07, 536.218 )
+scale = Vector2( 9, 0.599999 )
+
+[node name="Button" parent="." instance=ExtResource( 2 )]
+position = Vector2( 706.353, 549.946 )
+
+[node name="Gate" parent="Button" instance=ExtResource( 4 )]
+position = Vector2( 654.217, -126.343 )
+scale = Vector2( 1, 2.88 )
+
+[node name="Button2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1643.11, 790.443 )
+
+[node name="Gate" parent="Button2" instance=ExtResource( 4 )]
+position = Vector2( -210.726, -366.839 )
+scale = Vector2( 1, 2.88 )
+
+[node name="Button5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1784.38, 260.339 )
+
+[node name="Gate" parent="Button5" instance=ExtResource( 4 )]
+position = Vector2( -280.181, 163.264 )
+scale = Vector2( 1, 2.88 )
+
+[node name="Button3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 144.634, 778.67 )
+
+[node name="Gate" parent="Button3" instance=ExtResource( 4 )]
+position = Vector2( 1428.86, -355.066 )
+scale = Vector2( 1, 2.88 )
+
+[node name="Button4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 329.631, 166.498 )
+
+[node name="Gate" parent="Button4" instance=ExtResource( 4 )]
+position = Vector2( 1313.16, 257.106 )
+scale = Vector2( 1, 2.88 )
+
+[node name="Spikes" parent="." instance=ExtResource( 1 )]
+position = Vector2( 198.154, 1024.56 )
+scale = Vector2( 5.44, 1 )
+
+[node name="Spikes2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 545.398, 1024.56 )
+scale = Vector2( 5.44, 1 )
+
+[node name="Spikes3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 892.642, 1024.56 )
+scale = Vector2( 5.44, 1 )
+
+[node name="Spikes4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1239.89, 1024.56 )
+scale = Vector2( 5.44, 1 )
+
+[node name="Spikes5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1587.53, 1024.56 )
+scale = Vector2( 5.44, 1 )
+
+[node name="Spikes6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1828.41, 1024.56 )
+scale = Vector2( 2.12002, 1 )
+
+[connection signal="body_entered" from="WallFlag" to="." method="_on_WallFlag_body_entered"]
+[connection signal="body_exited" from="WallFlag" to="." method="_on_WallFlag_body_exited"]

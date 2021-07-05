@@ -1,0 +1,66 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/PlayerWall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/Level.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Wall.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/PlayerFlag.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Button.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Gate.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Spikes.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/WallFlag.tscn" type="PackedScene" id=10]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 715.933, 756.96 )
+
+[node name="PlayerWall" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1261.57, 705.703 )
+
+[node name="Floor" parent="." instance=ExtResource( 4 )]
+position = Vector2( 953.489, 1036.93 )
+scale = Vector2( 31.16, 2.2 )
+
+[node name="Platform" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1666.12, 570.855 )
+scale = Vector2( 5.40655, 1.21488 )
+
+[node name="PlayerFlag" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1769, 468.067 )
+
+[node name="WallFlag" parent="." instance=ExtResource( 10 )]
+position = Vector2( 250.309, 227.86 )
+
+[node name="Turret" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1788.98, 845.046 )
+
+[node name="Turret2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1528.27, 729.676 )
+rotation = 3.12841
+
+[node name="Turret3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1613.68, 925.954 )
+rotation = 1.57268
+
+[node name="Turret4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1699.08, 648.767 )
+rotation = -1.55954
+
+[node name="Button" parent="." instance=ExtResource( 7 )]
+position = Vector2( 107.878, 931.947 )
+
+[node name="Gate" parent="Button" instance=ExtResource( 8 )]
+position = Vector2( 857.032, -124.36 )
+scale = Vector2( 1, 4.96 )
+
+[node name="Spikes" parent="." instance=ExtResource( 9 )]
+position = Vector2( 413.533, 943.933 )
+scale = Vector2( 7.36, 1 )
+
+[connection signal="body_entered" from="PlayerFlag" to="." method="_on_PlayerFlag_body_entered"]
+[connection signal="body_exited" from="PlayerFlag" to="." method="_on_PlayerFlag_body_exited"]
+[connection signal="body_entered" from="WallFlag" to="." method="_on_WallFlag_body_entered"]
+[connection signal="body_exited" from="WallFlag" to="." method="_on_WallFlag_body_exited"]

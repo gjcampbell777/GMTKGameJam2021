@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scenes/PlayerFlag.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Wall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/LevelTemplate.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/WallFlag.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/PlayerWall.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scripts/Level.gd" type="Script" id=8]
+
+[node name="Level8" type="Node2D"]
+script = ExtResource( 8 )
+
+[node name="LevelTemplate" parent="." instance=ExtResource( 4 )]
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 178.909, 1000.38 )
+
+[node name="PlayerWall" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1006.6, 255.931 )
+
+[node name="WallFlag" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1736.96, 176.066 )
+
+[node name="Wall" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1759.62, 968.116 )
+scale = Vector2( 4.24335, 2.69231 )
+
+[node name="Wall2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 708.372, 734.108 )
+scale = Vector2( 21.3633, 1.17231 )
+
+[node name="Wall3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 276.025, 260.009 )
+scale = Vector2( 7.88334, 1.17231 )
+
+[node name="Turret" parent="." instance=ExtResource( 3 )]
+position = Vector2( 57.707, 662.973 )
+rotation = 3.14159
+
+[node name="Turret2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 57.707, 596.827 )
+rotation = 3.14159
+
+[node name="Turret3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 57.707, 531.311 )
+rotation = 3.14159
+
+[node name="Turret4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 57.707, 465.165 )
+rotation = 3.14159
+
+[node name="Turret5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 57.707, 398.389 )
+rotation = 3.14159
+
+[node name="Turret6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 57.707, 332.244 )
+rotation = 3.14159
+
+[node name="PlayerFlag" parent="." instance=ExtResource( 1 )]
+position = Vector2( 286.85, 191.576 )
+
+[connection signal="body_entered" from="WallFlag" to="." method="_on_WallFlag_body_entered"]
+[connection signal="body_exited" from="WallFlag" to="." method="_on_WallFlag_body_exited"]
+[connection signal="body_entered" from="PlayerFlag" to="." method="_on_PlayerFlag_body_entered"]
+[connection signal="body_exited" from="PlayerFlag" to="." method="_on_PlayerFlag_body_exited"]

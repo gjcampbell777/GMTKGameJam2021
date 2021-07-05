@@ -1,0 +1,106 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scenes/Spikes.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Wall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Gate.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/LevelTemplate.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/PlayerWall.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/WallFlag.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scripts/Level.gd" type="Script" id=9]
+
+[node name="Level11" type="Node2D"]
+script = ExtResource( 9 )
+
+[node name="LevelTemplate" parent="." instance=ExtResource( 5 )]
+position = Vector2( 0, 1.41418 )
+
+[node name="Player" parent="." instance=ExtResource( 6 )]
+position = Vector2( 82.7424, 1006.03 )
+
+[node name="PlayerWall" parent="." instance=ExtResource( 7 )]
+position = Vector2( 187.334, 309.217 )
+
+[node name="Wall2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 694.85, 603.324 )
+scale = Vector2( 20.9529, 0.403412 )
+
+[node name="Wall" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1348.13, 843.939 )
+rotation = 1.57145
+scale = Vector2( 7.17586, 0.510942 )
+
+[node name="WallFlag" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1623.96, 916.098 )
+
+[node name="Button" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1147.73, 1025.11 )
+
+[node name="Gate" parent="Button" instance=ExtResource( 4 )]
+position = Vector2( -220.44, -717.125 )
+scale = Vector2( 1.76, 8.88 )
+
+[node name="Button2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 470.791, 1024.64 )
+
+[node name="Gate" parent="Button2" instance=ExtResource( 4 )]
+position = Vector2( 820.337, -718.223 )
+scale = Vector2( 2.28002, 8.88 )
+
+[node name="Button3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 822.458, 1026.28 )
+
+[node name="Gate" parent="Button3" instance=ExtResource( 4 )]
+position = Vector2( -332.683, -717.747 )
+scale = Vector2( 2.49302, 8.88 )
+
+[node name="Spikes" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1820.99, 273.69 )
+rotation = 4.71239
+scale = Vector2( 7.84, 2.48 )
+
+[node name="Spikes10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1820.99, 791.292 )
+rotation = 4.71239
+scale = Vector2( 8.30777, 2.48 )
+
+[node name="Spikes9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1434.9, 830.89 )
+rotation = 1.5708
+scale = Vector2( 7.48, 2.16 )
+
+[node name="Spikes2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 217.471, 559.155 )
+scale = Vector2( 6.04, 1 )
+
+[node name="Spikes3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 217.265, 57.8508 )
+rotation = 3.14159
+scale = Vector2( 6.04, 1 )
+
+[node name="Spikes4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1100.15, 557.949 )
+scale = Vector2( 3.71999, 1 )
+
+[node name="Spikes5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 719.912, 558.959 )
+scale = Vector2( 4.76, 1 )
+
+[node name="Spikes6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1101.57, 56.3808 )
+rotation = 3.14159
+scale = Vector2( 3.67999, 0.96 )
+
+[node name="Spikes8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1552.28, 48.8298 )
+rotation = 3.14159
+scale = Vector2( 5.91999, 0.96 )
+
+[node name="Spikes7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 720.266, 56.3979 )
+rotation = 3.14159
+scale = Vector2( 4.71999, 0.96 )
+
+[connection signal="body_entered" from="WallFlag" to="." method="_on_WallFlag_body_entered"]
+[connection signal="body_exited" from="WallFlag" to="." method="_on_WallFlag_body_exited"]

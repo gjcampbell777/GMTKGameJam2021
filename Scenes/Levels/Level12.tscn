@@ -1,0 +1,88 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scenes/Turret.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Wall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Button.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/LevelTemplate.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Gate.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/PlayerWall.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/WallFlag.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scripts/Level.gd" type="Script" id=9]
+
+[node name="Level12" type="Node2D"]
+scale = Vector2( 0.9977, 1 )
+script = ExtResource( 9 )
+
+[node name="LevelTemplate" parent="." instance=ExtResource( 4 )]
+
+[node name="PlayerWall" parent="." instance=ExtResource( 7 )]
+position = Vector2( 152.062, 219.395 )
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 72.1249, 554.372 )
+
+[node name="WallFlag" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1834.24, 882.469 )
+
+[node name="Wall" parent="." instance=ExtResource( 2 )]
+position = Vector2( 138.758, 671.751 )
+scale = Vector2( 3.56, 0.599999 )
+
+[node name="Wall6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1781.38, 671.376 )
+scale = Vector2( 3.56, 0.599999 )
+
+[node name="Wall2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 138.442, 437.307 )
+scale = Vector2( 3.56, 0.599999 )
+
+[node name="Wall5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1781.53, 436.695 )
+scale = Vector2( 3.56, 0.599999 )
+
+[node name="Button" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1803.12, 620.133 )
+
+[node name="Gate" parent="Button" instance=ExtResource( 6 )]
+position = Vector2( -74.2579, 255.568 )
+scale = Vector2( 1.92213, 5.67999 )
+
+[node name="Turret2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 373.358, 53.601 )
+rotation = 4.71239
+
+[node name="Turret4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 523.029, 53.601 )
+rotation = 4.71239
+
+[node name="Turret6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 669.137, 53.601 )
+rotation = 4.71239
+
+[node name="Turret8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 818.808, 53.601 )
+rotation = 4.71239
+
+[node name="Turret10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 964.024, 53.601 )
+rotation = 4.71239
+
+[node name="Turret12" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1113.7, 53.601 )
+rotation = 4.71239
+
+[node name="Turret14" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1258.03, 53.601 )
+rotation = 4.71239
+
+[node name="Turret16" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1407.7, 53.601 )
+rotation = 4.71239
+
+[node name="Turret18" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1555.73, 53.601 )
+rotation = 4.71239
+
+[connection signal="body_entered" from="WallFlag" to="." method="_on_WallFlag_body_entered"]
+[connection signal="body_exited" from="WallFlag" to="." method="_on_WallFlag_body_exited"]

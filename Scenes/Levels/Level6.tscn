@@ -1,0 +1,51 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scenes/WallFlag.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Spikes.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Wall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Button.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/LevelTemplate.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Gate.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/PlayerWall.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scripts/Level.gd" type="Script" id=9]
+
+[node name="Level6" type="Node2D"]
+script = ExtResource( 9 )
+
+[node name="LevelTemplate" parent="." instance=ExtResource( 5 )]
+
+[node name="Player" parent="." instance=ExtResource( 6 )]
+position = Vector2( 108.353, 637.52 )
+
+[node name="PlayerWall" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1001.55, 426.911 )
+
+[node name="Wall" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1595.71, 913.13 )
+scale = Vector2( 9.3666, 5.54319 )
+
+[node name="Wall2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 346.478, 907.143 )
+scale = Vector2( 10.0466, 5.54319 )
+
+[node name="Wall3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 345.223, 304.021 )
+scale = Vector2( 10.0466, 1.18319 )
+
+[node name="Spikes" parent="." instance=ExtResource( 2 )]
+position = Vector2( 982.316, 991.107 )
+scale = Vector2( 9.84001, 2.6 )
+
+[node name="Button" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1807.3, 705.429 )
+
+[node name="Gate" parent="Button" instance=ExtResource( 7 )]
+position = Vector2( -1302.4, -561.2 )
+scale = Vector2( 5.08, 3.84 )
+
+[node name="WallFlag" parent="." instance=ExtResource( 1 )]
+position = Vector2( 226.998, 142.866 )
+
+[connection signal="body_entered" from="WallFlag" to="." method="_on_WallFlag_body_entered"]
+[connection signal="body_exited" from="WallFlag" to="." method="_on_WallFlag_body_exited"]
